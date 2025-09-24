@@ -26,12 +26,12 @@ jobs:
 
     - name: Build da imagem Docker
       run: |
-        docker build -t game-library .
+        docker build -t fcg-gamelibrary .
 
     - name: Tag para o ECR
       run: |
-        # docker tag game-library:latest ${{ secrets.ECR_REPOSITORY }}:latest
-        docker tag game-library:latest ${{ secrets.ECR_REPOSITORY }}:latest
+        # docker tag fcg-gamelibrary:latest ${{ secrets.ECR_REPOSITORY }}:latest
+        docker tag fcg-gamelibrary:latest ${{ secrets.ECR_REPOSITORY }}:latest
     - name: Push no ECR
       run: |
         docker push ${{ secrets.ECR_REPOSITORY }}:latest
